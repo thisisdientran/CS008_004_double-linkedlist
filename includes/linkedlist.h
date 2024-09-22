@@ -13,7 +13,11 @@ class LinkedList
 {
 private:
     Node<T>* head = nullptr, *tail = nullptr;
+    // 
     int _size = 0;
+
+public:
+
     void push_front(Node<T>* node);
     void push_back(Node<T>* node);
 
@@ -23,7 +27,7 @@ private:
     void insert_before(Node<T>* target, Node<T>* data);
     Node<T>* search(const T& target);
     Node<T>* createNode(const T& data);
-public:
+// public:
     LinkedList();
     LinkedList(const std::initializer_list<T>& list);
 

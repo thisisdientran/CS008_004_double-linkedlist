@@ -104,25 +104,25 @@ void LinkedList<T>::pop_back()
 template<typename T>
 T &LinkedList<T>::front()
 {
-    return ;
+    return head -> data();
 }
 
 template<typename T>
 T &LinkedList<T>::back()
 {
-    return ;
+    return tail -> data();
 }
 
 template<typename T>
 const T &LinkedList<T>::front() const
 {
-    return ;
+    return head -> data();
 }
 
 template<typename T>
 const T &LinkedList<T>::back() const
 {
-    return ;
+    return tail -> data();
 }
 
 template<typename T>
@@ -164,19 +164,22 @@ LinkedList<U> operator+(const LinkedList<U> &list1, const LinkedList<U> &list2)
 template<typename T>
 Node<T> *LinkedList<T>::createNode(const T &data)
 {
-    return nullptr;
+    Node<T> * n = new Node<T>;
+    n->data = data;
+    return n;
 }
 
 template<typename T>
 std::ostream &operator<<(std::ostream &out, const LinkedList<T> &list)
 {
     Node<T>* walker = list.head;
-    
+    out << "[|||] -> ";
     while(walker)
     {
         out << walker->data << " ";
         walker = walker->next;
     }
+    out << "-> [|||]";
     return out;
 }
 
