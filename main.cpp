@@ -4,7 +4,7 @@
 
 int main()
 {
-    LinkedList<int> l;
+    LinkedList<int> l = {1,2,3,4,5};
     run_all_test();
 
 

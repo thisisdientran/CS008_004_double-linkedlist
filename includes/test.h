@@ -21,7 +21,7 @@ void test_create_node(){
     try{
         LinkedList<int> list;
         int num = 4;
-        list.createNode(4);
+        // list.createNode(4);
         std::cout << list;
         
     }catch(int num){

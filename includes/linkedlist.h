@@ -16,7 +16,7 @@ private:
     // 
     int _size = 0;
 
-public:
+// public:
 
     void push_front(Node<T>* node);
     void push_back(Node<T>* node);
@@ -25,9 +25,10 @@ public:
     void remove(Node<T>* target);
 
     void insert_before(Node<T>* target, Node<T>* data);
+    void insert_after(Node<T>* target, Node<T>* data);
     Node<T>* search(const T& target);
     Node<T>* createNode(const T& data);
-// public:
+public:
     LinkedList();
     LinkedList(const std::initializer_list<T>& list);
 
@@ -45,6 +46,7 @@ public:
                                    const LinkedList<U>& list2);
 
     int size() const;
+    Node<T>* next() const;
     void push_front(const T& data);
     void push_back(const T& data);
     void pop_front();
@@ -52,14 +54,15 @@ public:
 
     T& front(); ///return data from head
     T& back();/// return data from tail
-    const T& front() const; ///return data from head
-    const T& back() const;/// return data from tail
+    const T& front() const; ///return data from head - read only
+    const T& back() const;/// return data from tail - read only
 
     bool empty() const;
 
     bool contains(const T& data);
 
-    void remove(const T& data); ///remove the first instance of ddta
+    void remove(const T& data); ///remove the first instance of data
+    void clean_list(); ///empty all data in list
     void insert_before(const T& targetData, const T& newData);
     void insert_after(const T& targetData, const T& newData);
 };
